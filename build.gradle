@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'org.flywaydb.flyway' version '8.0.1'
+}
+
+group = 'com.goit'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation 'com.github.MadaraFsl:HibernateUtil:1.0'
+    implementation 'com.github.MadaraFsl:HibernateUtil:1.0'
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'com.h2database:h2:1.4.200'
+    implementation 'org.hibernate:hibernate-core:5.5.7.Final'
+    implementation 'org.flywaydb:flyway-core:8.0.1'
+}
+
+test {
+    useJUnitPlatform()
+}
