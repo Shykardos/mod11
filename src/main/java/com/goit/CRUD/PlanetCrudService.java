@@ -1,5 +1,6 @@
 package com.goit.CRUD;
 
+import com.goit.Client;
 import com.goit.Planet;
 import com.goit.util.HibernateUtil;
 import org.hibernate.Session;
@@ -36,6 +37,7 @@ public class PlanetCrudService {
         } finally {
             session.close();
         }
+
         return planet;
     }
     public void deletePlanet(Planet planet) {

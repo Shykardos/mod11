@@ -11,14 +11,18 @@ public class Planet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Pattern(regexp = "[A-Za-z\\s]+")
+    @Size(min = 3, max = 200)
     private String name;
+
+    @Pattern(regexp = "^[A-Za-z0-9]+$")
+    private String identifier;
 
     public Planet() {
     }
 
-    public Planet(String name) {
+    public Planet(String name, String identifier) {
         this.name = name;
+        this.identifier = identifier;
     }
 
     public int getId() {
@@ -35,5 +39,13 @@ public class Planet {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
     }
 }
