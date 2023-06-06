@@ -1,6 +1,5 @@
 package com.goit.CRUD;
 
-import com.goit.Client;
 import com.goit.Planet;
 import com.goit.util.HibernateUtil;
 import org.hibernate.Session;
@@ -26,7 +25,7 @@ public class PlanetCrudService {
         }
     }
 
-    public Planet getPlanetById(int id) {
+    public Planet getPlanetById(String id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Planet planet = null;
 

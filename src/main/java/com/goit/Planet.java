@@ -8,28 +8,25 @@ import javax.validation.constraints.Size;
 public class Planet {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Pattern(regexp = "^[A-Z0-9]+$")
+    private String id;
 
     @Size(min = 3, max = 200)
     private String name;
 
-    @Pattern(regexp = "^[A-Za-z0-9]+$")
-    private String identifier;
-
     public Planet() {
     }
 
-    public Planet(String name, String identifier) {
+    public Planet(String id, String name) {
+        this.id = id;
         this.name = name;
-        this.identifier = identifier;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -39,13 +36,5 @@ public class Planet {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getIdentifier() {
-        return identifier;
-    }
-
-    public void setIdentifier(String identifier) {
-        this.identifier = identifier;
     }
 }
