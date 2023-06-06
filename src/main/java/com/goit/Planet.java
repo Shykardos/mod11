@@ -1,9 +1,8 @@
 package com.goit;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Planet {
@@ -12,6 +11,7 @@ public class Planet {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Pattern(regexp = "[A-Za-z\\s]+")
     private String name;
 
     public Planet() {

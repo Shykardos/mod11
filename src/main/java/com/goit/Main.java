@@ -27,11 +27,9 @@ public class Main {
         clientCrudService.deleteClient(client);
         planetCrudService.deletePlanet(planet);
 
-        // Verify that the client and planet were deleted
         Client deletedClient = clientCrudService.getClientById(client.getId());
         Planet deletedPlanet = planetCrudService.getPlanetById(planet.getId());
 
-        // Print the result of the deletion
         System.out.println("Deleted Client: " + (deletedClient == null ? "null" : deletedClient.getName()));
         System.out.println("Deleted Planet: " + (deletedPlanet == null ? "null" : deletedPlanet.getName()));
     }

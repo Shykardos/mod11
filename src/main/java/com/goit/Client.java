@@ -1,9 +1,8 @@
 package com.goit;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Client {
@@ -12,6 +11,8 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Size(min = 3, max = 200)
+    @Pattern(regexp = "[A-Za-z\\s]+")
     private String name;
 
     public Client() {
